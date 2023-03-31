@@ -3,7 +3,7 @@
 
 data <- read.csv("data.csv")
 
-predictors <- c("x1", "x2", "x3")
+predictors <- c("x1", "x2")
 response <- "y"
 
 model <- lm(response ~ ., data = data[, c(predictors, response)])
