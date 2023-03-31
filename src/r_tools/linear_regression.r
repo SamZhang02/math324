@@ -9,7 +9,3 @@ response <- "y"
 model <- lm(response ~ ., data = data[, c(predictors, response)])
 
 summary(model)
-
-model$coefficients
-model$coefficients[1]
-
