@@ -1,0 +1,240 @@
+\documentclass[sn-mathphys,Numbered]{sn-jnl}% Math and Physical Sciences Reference Style
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Bias}{\mathbb{B}}
+\newcommand{\eff}{\text{eff}}
+\newcommand{\Remark}{\textbf{Remark }}
+\newcommand{\Example}{\textbf{Example }}
+\newcommand{\Proof}{\textbf{Proof:}}
+\newcommand{\QED}{\hfill $\blacksquare$}
+
+%% as per the requirement new theorem styles can be included as shown below
+% \theoremstyle{thmstyleone}%
+% \newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+% \newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+% \theoremstyle{thmstyletwo}%
+% \newtheorem{example}{Example}%
+% \newtheorem{remark}{Remark}%
+
+% \theoremstyle{thmstylethree}%
+% \newtheorem{definition}{Definition}%
+
+\raggedbottom{}
+\setlength{\parindent}{0pt} \setlength{\parskip}{0.5em} \setlength{\topmargin}{-1.5cm} \setlength{\textheight}{24cm}
+\setlength{\textwidth}{15cm} \setlength{\oddsidemargin}{0.5cm}
+\setlength{\evensidemargin}{0.5cm} \setlength{\headheight}{0cm} % \unnumbered% uncomment this for unnumbered level heads
+
+\begin{document}
+
+\title[MATH324]{MATH324 Crib Sheet}
+
+\author{\fnm{Sam} \sur{Zhang}}
+
+\maketitle
+\newpage
+
+\section{Properties of Estimators and Statistics}
+\subsection{Biasedness}\label{biasedness}
+An estimator $\hat{\theta}$ is biased if $\E(\hat{\theta}) \neq \theta$.\\
+\Example $\hat{\theta} = \frac{1}{n} \sum_{i=1}^n X_i$ is biased if $X_i$ are
+i.i.d.\ with mean $\mu$ and variance $\sigma^2$.
+\begin{align}
+    \E ( \hat{\theta} ) = \frac{1}{n} \sum_{i=1}^n \E (X_i
+    ) = \frac{1}{n} n \mu = \mu
+\end{align}
+The bias is determined by the equation
+\begin{equation}
+    \Bias ( \hat{\theta} ) = \E ( \hat{\theta} ) - \theta
+\end{equation}
+We can generally find an unbiased estimator from a biased estimator by eliminating
+the constants surrounding the estimator, such that $\E(\hat{\theta}) \to \theta$.
+
+\subsection{Consistency}\label{consistency}
+An estimator $\hat{\theta}_n$ is consistent if $\hat{\theta}$ converges in
+probability to $\theta$ as $n \rightarrow \infty$.
+\begin{align}
+    \lim_{n \rightarrow \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = 0 \\
+    \lim_{n \rightarrow \infty} P(|\hat{\theta}_n - \theta| \leq \epsilon) = 1
+\end{align}
+This is equivalent to the following:
+\begin{align}
+    \lim_{n \to \infty} \Var ( \hat{\theta_n} ) = 0
+\end{align}
+\subsection{Asymptotic Normality}\label{normality}
+An estimator $\hat{\theta}$ is asymptotically normal if $\hat{\theta}$
+converges in distribution to a normal distribution as $n \rightarrow \infty$.\\
+\Example $\bar X = \frac{1}{n} \sum_{i=1}^n X_i$ is asymptotically normal if
+$X_i$ are independent and identically distributed (i.i.d.) with mean $\mu$ and
+variance $\sigma^2$. For large samples:
+\begin{align}
+    \bar{X}                                         & \sim N(\mu, \frac{\sigma^2}{n}) \\
+    \frac{\bar{X} - \mu}{\sqrt{\frac{\sigma^2}{n}}} & \sim N(0, 1)
+\end{align}
+
+\subsection{Sufficiency}\label{sufficiency}
+Given a random sample $Y_1 \ldots Y_n$ with the parameter $\theta$, a statistic
+$T$ is sufficient for $\theta$ if $T$ contains all the information about
+$\theta$. This implies that $\theta$ can be uniquely determined from an
+estimator based on $T$ without any loss of information.\\ This is true iff the
+distribution of $Y$ given $T$ is does not depend on $\theta$.
+\subsubsection{Fisher-Neyman Theorem}\label{fisher-neyman}
+Let $U$ be a statistic of the random $Y_1 \ldots Y_n$. $U$ is sufficient for
+$\theta$ iff $L(\theta)$ can be writte as
+\begin{equation}
+    L(\theta) = g(u,\theta) \cdot h(y_1, y_2, \ldots , y_n | u)
+\end{equation}
+where $g(u,\theta)$ is a function of $u$ and $\theta$ and $h(y_1, y_2, \ldots , y_n)$ is not a function of $\theta$
+
+\subsection{Efficiency}\label{efficiency}
+An estimator $\hat{\theta}$ is efficient if $\hat{\theta}$ has the smallest
+variance among all unbiased estimators of $\theta$.\ the efficiency of two
+estimators $\hat{\theta}_1$ and $\hat{\theta}_2$ is given by
+\begin{equation}
+    \eff(\hat \theta_1, \hat \theta_2) = \frac{\Var(\hat{\theta}_1)}{\Var(\hat{\theta}_2)}
+\end{equation}
+\subsubsection{The Rao Blackwell Theorem}\label{rao-blackwell}
+Let $\hat{\theta}$ be an unbiased estimator of $\theta$ such that
+$\Var(\hat{\theta}) < \infty$. If $U$ is a sufficient statistic for $\theta$,
+define $\hat \theta ^ * = \E (\hat \theta | U)$. Then $\forall \theta$:
+\begin{equation}
+    \E(\hat \theta ^ *) = \theta \quad \text{and} \quad \Var(\hat \theta ^ *) \leq
+    \Var(\hat \theta)\nonumber
+\end{equation}
+\Remark{The result of the Rao Blackwell Theorem is the
+    \textit{minimum-variance unbiased estimator} of $\theta$. (MVUE)}
+
+\section{Hypothesis Testing}\label{hypothesis-testing}
+\subsection{Terminologies}\label{testing-terminologies}
+\begin{itemize}
+    \item \textbf{Null Hypothesis} $\to$ $H_0: \theta = \theta_0$
+    \item \textbf{Alternative Hypothesis}$\to$ $H_a: \theta \neq \theta_0$
+    \item \textbf{Type I Error}$\to$ $\alpha = P(\text{Reject } H_0 \text{ when } H_0 \text{ is
+                  true})$ i.e. $P(T \in RR | H_0)$
+    \item \textbf{Type II Error}$\to$ $\beta = P(\text{Fail to reject } H_0 \text{ when } H_1 \text{
+                  is true})$ i.e. $P(T \not \in RR | H_1)$
+\end{itemize}
+\subsection{Rejection Regions}\label{rejection-regions}
+A rejection region is a set of values of the test statistic $T$ such that if
+$T$ falls in the rejection region, we reject the null hypothesis.\\ \Example
+Let $X_i$ be i.i.d.\ with mean $\mu$ and variance $\sigma^2$. Let $\bar X =
+    \frac{1}{n} \sum_{i=1}^n X_i$. We want to test the null hypothesis $H_0: \mu =
+    \mu_0$ against the alternative hypothesis $H_1: \mu \neq \mu_0$.\\ We can use
+the following rejection region:
+\begin{equation}
+    R = \left\{ T \in \mathbb{R} : |T - \mu_0| > c \sqrt{\frac{\sigma^2}{n}} \right\}
+\end{equation}
+where $c$ is a constant.\\
+\Remark{This is in fact a two-sided T-test for the population mean.}
+
+\subsection{The T-test}\label{t-test}
+\subsubsection{Large-Sample Hypothesis Testing}\label{large-sample-testing}
+Large sample hypothesis testing is based on the central limit theorem. \\ Given
+an estimator $\hat \theta$ that is asymptotically normal in regards to
+$\theta$, we know the following:
+\begin{equation}
+    Z = \frac{\hat{\theta}_n - \theta_0}{\sqrt{\frac{\Var(\hat{\theta}_n)}{n}}} \sim N(0, 1)
+\end{equation}
+We can make a comparison with the standard normal distribution's rejection region in regards to a chosen $\alpha$, e.g. $Z_\alpha = Z_{0.05}$, and see if $Z$ falls in the rejection region $Z_{0.05}$.\\
+Alternatively, a clearer way is to use the \textit{p-value}, which is the probability of observing a value of $Z$ as extreme as the one observed, given that $H_0$ is true.\\ We can obtain the p-value by using the standard normal distribution's CDF, but this is generally simpliefied into a table or a software.\\
+We reject $H_0$ if $p < \alpha$. Otherwise, we fail to reject $H_0$.\\
+
+\subsubsection{Small-Sample Hypothesis Test}\label{small-sample-testing}
+The small-sample hypothesis test is based on the t-distribution, a distribution
+similiar to the standard normal distribution, but with heavier tails.\\ The
+t-distribution is defined as follows:
+\begin{equation}
+    T = \frac{\hat{\theta}_n - \theta_0}{\sqrt{\frac{\Var(\hat{\theta}_n)}{n}}} \sim t(n-1)
+\end{equation}
+The t-distribution is a similiar distribution to $Z$, with different
+parameters. The parameter $n-1$ is the degrees of freedom.\\ \Remark The
+t-distribution is used in the same way as the standard normal distribution,
+except that the rejection region is defined by the t-distribution instead of
+the standard normal distribution.\\
+
+\subsection{The Likelihood Ratio Test}\label{likelihood-ratio}
+\subsubsection{The Likelihood Ratio Test for a Single Parameter}\label{single-param}
+\textbf{The Neyman-Pearson Lemma}
+\subsubsection{The Likelihood Ratio Test for Multiple Parameters}\label{multiple-param}
+
+\section{Linear Regression}\label{linear-regression}
+\subsection{Parameters of a Linear Model}\label{linear-model}
+\subsection{The Least Squares Estimator}\label{least-squares}
+\subsection{The correlation coefficient}\label{correlation}
+\subsection{Hypothesis Testing for Linear Regression}\label{linear-hypothesis}
+\subsubsection{The T-test}\label{regression-t-test}
+\subsubsection{The F-test}\label{regression-f-test}
+
+\newpage
+\section*{Formulas, Tables, and Other Tools}\label{formulas-and-tables}
+\subsection*{Theorem: Convergence in Probability}
+Suppose that $\hat X_n \to X$ in probability and $\hat Y_n \to Y$ in
+probability. Then:
+\begin{itemize}
+    \item $\hat X_n + \hat Y_n \to X + Y$ in probability\\
+    \item $\hat X_n \cdot \hat Y_n \to X \cdot Y$ in probability\\
+    \item $Y \ne 0 \implies $ $\frac{\hat X_n}{\hat Y_n} \to \frac{X}{Y}$ in probability\\
+    \item $g(\cdot)$ is a continuous function at $X$ $\implies$ $g(\hat X_n) \to g(X)$ in
+          probability
+\end{itemize}
+Suppose that $U_n$ converges to a standard normal as $n \to \infty$ and $W_n$ converges to 1. Then:
+\begin{equation}
+    \frac{U_n}{W_n} \to N(0, 1)
+\end{equation}
+
+\subsection*{Common T and Z hypothesis tests}
+\bgroup
+\begin{center}
+    \def\arraystretch{2}
+    \begin{tabular}{ c|c|c|c }
+        \toprule
+        Test Parameter  & Sample Size & Point Estimator        & Standard Error                                                               \\
+        \midrule
+        $\mu$           & $n$         & $\bar X$               & $\frac{\sigma}{\sqrt{n}}$                                                    \\
+        $p$             & $n$         & $\hat p = \frac{X}{p}$ & $\sqrt{\frac{\hat p(1-\hat p)}{n}}$                                          \\
+        $\mu_1 - \mu_2$ & $n_1 + n_2$ & $\bar X_1 - \bar X_2$  & $\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}$                     \\
+        $p_1 - p_2$     & $n_1 + n_2$ & $\hat p_1 - \hat p_2$  & $\sqrt{\frac{\hat p_1(1-\hat p_1)}{n_1} + \frac{\hat p_2(1-\hat p_2)}{n_2}}$ \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+\egroup
+$S\approx \sigma$, but given a small sample size ($n \le 30$), add the extra parameter $df = n-1$ to the t-distribution.
+
+\subsection*{Chi-Square distribution and Variance}
+\begin{equation}
+    W = \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{(n-1)}
+\end{equation}
+
+\subsection*{F-distribution}
+\begin{equation}
+    F = \frac{W_1/df_1}{W_2/df_2} \sim F(df_1, df_2)
+\end{equation}
+Where $W_1$ and $W_2$ are chi-squared random variables with $df_1$ and $df_2$.
+
+\subsection*{R-Scripts}
+All R-scripts below are available at
+\url{https://github.com/SamZhang02/math324/tree/main/src/r_tools}.
+\begin{itemize}
+    \item Single/Multiple Linear Regression
+    \item Hypothesis Testing
+\end{itemize}
+\end{document}
