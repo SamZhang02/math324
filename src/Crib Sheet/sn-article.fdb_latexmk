@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1680711140 "/Users/samzhang/repos/math324/src/Crib Sheet/sn-article.tex" "sn-article.pdf" "sn-article" 1680711141
-  "/Users/samzhang/repos/math324/src/Crib Sheet/sn-article.tex" 1680711140 5296 3fba8a017a60539ce8b18d9b12c58bdf ""
+["pdflatex"] 1680711182 "/Users/samzhang/repos/math324/src/Crib Sheet/sn-article.tex" "sn-article.pdf" "sn-article" 1680711182
+  "/Users/samzhang/repos/math324/src/Crib Sheet/sn-article.tex" 1680711181 5318 a41537d296f48474f41fc79245bbe5a2 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -121,9 +121,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668301523 2826448 4616b6eaac1cfc2ddc558e1ac08a1e70 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "sn-article.aux" 1680711141 5074 0c55e546344c9bfbd064f4f6cb29ee71 "pdflatex"
-  "sn-article.out" 1680711141 3829 b0ac3494357e45ac3d03a0d5a11e2a28 "pdflatex"
-  "sn-article.tex" 1680711140 5296 3fba8a017a60539ce8b18d9b12c58bdf ""
+  "sn-article.aux" 1680711182 5096 c8be2e360878e3ceb00ee7770dee57e7 "pdflatex"
+  "sn-article.out" 1680711182 3829 b0ac3494357e45ac3d03a0d5a11e2a28 "pdflatex"
+  "sn-article.tex" 1680711181 5318 a41537d296f48474f41fc79245bbe5a2 ""
   "sn-jnl.cls" 1680720278 55969 f8e0f769b303ac7397268c47e0fbe53c ""
   (generated)
   "sn-article.aux"

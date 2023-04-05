@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.12)  5 APR 2023 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.12)  5 APR 2023 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -477,11 +477,7 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count323
 \l__pdf_internal_box=\box75
-) (./sn-article.aux
-
-LaTeX Warning: Label `t-test' multiply defined.
-
-)
+) (./sn-article.aux)
 \openout1 = `sn-article.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
@@ -601,17 +597,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3] (./sn-article.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `sn-article.out' has not changed.
 (rerunfilecheck)             Checksum: B0AC3494357E45AC3D03A0D5A11E2A28;3829.
  ) 
 Here is how much of TeX's memory you used:
- 14175 strings out of 478268
- 218748 string characters out of 5846346
- 522871 words of memory out of 5000000
- 32121 multiletter control sequences out of 15000+600000
+ 14176 strings out of 478268
+ 218778 string characters out of 5846346
+ 522872 words of memory out of 5000000
+ 32122 multiletter control sequences out of 15000+600000
  474449 words of font info for 49 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
  85i,10n,90p,432b,341s stack positions out of 10000i,1000n,20000p,200000b,200000s
