@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1680723396 "/Users/samzhang/repos/math324/src/Crib Sheet/crib sheet.tex" "crib sheet.pdf" "crib sheet" 1680723398
-  "/Users/samzhang/repos/math324/src/Crib Sheet/crib sheet.tex" 1680723362 11386 e0783c1c1b2d5263f48bf9982f790081 ""
+["pdflatex"] 1680723889 "/Users/samzhang/repos/math324/src/Crib Sheet/crib sheet.tex" "crib sheet.pdf" "crib sheet" 1680723891
+  "/Users/samzhang/repos/math324/src/Crib Sheet/crib sheet.tex" 1680723889 11382 b5f9d7701d3fe99071883128723a83b1 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -126,10 +126,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668301523 2826448 4616b6eaac1cfc2ddc558e1ac08a1e70 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "crib sheet.aux" 1680723398 5803 3e67d356aa53a146fa1382f87fed1bb0 "pdflatex"
-  "crib sheet.out" 1680723398 4266 8243896a94b5a90f38f93588e57763ad "pdflatex"
-  "crib sheet.tex" 1680723362 11386 e0783c1c1b2d5263f48bf9982f790081 ""
-  "sn-jnl.cls" 1680720278 55969 f8e0f769b303ac7397268c47e0fbe53c ""
+  "crib sheet.aux" 1680723891 5803 3e67d356aa53a146fa1382f87fed1bb0 "pdflatex"
+  "crib sheet.out" 1680723891 4266 8243896a94b5a90f38f93588e57763ad "pdflatex"
+  "crib sheet.tex" 1680723889 11382 b5f9d7701d3fe99071883128723a83b1 ""
+  "sn-jnl.cls" 1680723836 55969 f8e0f769b303ac7397268c47e0fbe53c ""
   (generated)
   "crib sheet.aux"
   "crib sheet.log"
