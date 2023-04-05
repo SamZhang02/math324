@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.12)  5 APR 2023 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.12)  5 APR 2023 15:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -600,17 +600,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
@@ -619,21 +619,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5] (./crib sheet.aux)
 Package rerunfilecheck Info: File `"crib sheet".out' has not changed.
-(rerunfilecheck)             Checksum: 8243896A94B5A90F38F93588E57763AD;4266.
+(rerunfilecheck)             Checksum: 4B592C5B05BCE41CF06B3F54E5091ABB;4434.
  ) 
 Here is how much of TeX's memory you used:
- 14213 strings out of 478268
- 219297 string characters out of 5846346
- 527120 words of memory out of 5000000
- 32139 multiletter control sequences out of 15000+600000
+ 14217 strings out of 478268
+ 219358 string characters out of 5846346
+ 527176 words of memory out of 5000000
+ 32141 multiletter control sequences out of 15000+600000
  474784 words of font info for 50 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
  85i,11n,90p,432b,335s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on "crib sheet.pdf" (5 pages, 199940 bytes).
+Output written on "crib sheet.pdf" (5 pages, 200733 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 193 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
