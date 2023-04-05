@@ -1,0 +1,130 @@
+\documentclass[sn-mathphys,Numbered]{sn-jnl}% Math and Physical Sciences Reference Style
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[title]{appendix}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{manyfoot}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{listings}
+
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Bias}{\mathbb{B}}
+\newcommand{\Remark}{\textbf{Remark:}}
+\newcommand{\Example}{\textbf{Example:}}
+\newcommand{\Proof}{\textbf{Proof:}}
+\newcommand{\QED}{\hfill $\blacksquare$}
+
+%% as per the requirement new theorem styles can be included as shown below
+% \theoremstyle{thmstyleone}%
+% \newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+% \newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+% \theoremstyle{thmstyletwo}%
+% \newtheorem{example}{Example}%
+% \newtheorem{remark}{Remark}%
+
+% \theoremstyle{thmstylethree}%
+% \newtheorem{definition}{Definition}%
+
+% \raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
+
+\begin{document}
+
+\title[MATH324]{MATH324 Crib Sheet}
+
+\author{\fnm{Sam} \sur{Zhang}}
+
+\maketitle
+\newpage
+
+\section{Properties of Estimators and Statistics}
+\subsection{Biasedness}\label{biasedness}
+An estimator $\hat{\theta}$ is biased if $\E(\hat{\theta}) \neq \theta$.\\
+Example:\\ $\hat{\theta} = \frac{1}{n} \sum_{i=1}^n X_i$ is biased if $X_i$ are
+i.i.d. with mean $\mu$ and variance $\sigma^2$.
+\begin{align}
+    \E ( \hat{\theta} ) = \frac{1}{n} \sum_{i=1}^n \E (X_i
+    ) = \frac{1}{n} n \mu = \mu
+\end{align}
+The bias is determined by the equation
+\begin{equation}
+    \Bias ( \hat{\theta} ) = \E ( \hat{\theta} ) - \theta
+\end{equation}
+We can generally find an unbiased estimator from a biased estimator by eliminating
+the constants surrounding the estimator, such that $\E(\hat{\theta}) \to \theta$.
+
+\subsection{Consistency}\label{consistency}
+An estimator $\hat{\theta}_n$ is consistent if $\hat{\theta}$ converges in
+probability to $\theta$ as $n \rightarrow \infty$.
+\begin{align}
+    \lim_{n \rightarrow \infty} P(|\hat{\theta}_n - \theta| > \epsilon) = 0 \\
+    \lim_{n \rightarrow \infty} P(|\hat{\theta}_n - \theta| \leq \epsilon) = 1
+\end{align}
+This is equivalent to the following:
+\begin{align}
+    \lim_{n \to \infty} \Var ( \hat{\theta_n} ) = 0
+\end{align}
+\subsection{Asymptotic Normality}\label{normality}
+An estimator $\hat{\theta}$ is asymptotically normal if $\hat{\theta}$
+converges in distribution to a normal distribution as $n \rightarrow \infty$.\\
+Example:\\ $\bar X = \frac{1}{n} \sum_{i=1}^n X_i$ is asymptotically normal if
+$X_i$ are independent and identically distributed (i.i.d.) with mean $\mu$ and
+variance $\sigma^2$.
+\begin{align}
+    \bar{X}                                         & \sim N(\mu, \frac{\sigma^2}{n}) \\
+    \frac{\bar{X} - \mu}{\sqrt{\frac{\sigma^2}{n}}} & \sim N(0, 1)
+\end{align}
+
+\subsection{Efficiency}\label{efficiency}
+An estimator $\hat{\theta}$ is efficient if $\hat{\theta}$ has the smallest
+variance among all unbiased estimators of $\theta$.
+\subsubsection{The Rao Blackwell Theorem}\label{rao-blackwell}
+Let $\hat{\theta}$ be an unbiased estimator of $\theta$ such that
+$\Var(\hat{\theta}) < \infty$. If $U$ is a sufficient statistic for $\theta$,
+define $\hat \theta ^ * = \E (\hat \theta | U)$. Then $\forall \theta$:
+\begin{equation}
+    \E(\hat \theta ^ *) = \theta \quad \text{and} \quad \Var(\hat \theta ^ *) \leq
+    \Var(\hat \theta)\nonumber
+\end{equation}
+\textbf{Remark}: The result of the Rao Blackwell Theorem is the
+\textit{minimum-variance unbiased estimator} of $\theta$. (MVUE)
+
+\subsection{Sufficiency}\label{sufficiency}
+A statistic $T$ is sufficient for $\theta$ if $T$ contains all the information
+about $\theta$. This implies that $\theta$ can be uniquely determined from an
+estimator based on $T$ without any loss of information.\\ Example:\\ $T = \bar
+    X$ is sufficient for $\mu$ if $X_i$ are i.i.d. with mean $\mu$ and variance
+$\sigma^2$.
+
+\section{Hypothesis Testing}\label{hypothesis-testing}
+\subsection{The T-test}\label{t-test}
+\subsubsection{Large-Sample Hypothesis Testing}\label{large-sample-testing}
+\subsubsection{Small-Sample Hypothesis Lemma}\label{small-sample-testing}
+
+\subsection{The Likelihood Ratio Test}\label{likelihood-ratio}
+\subsubsection{The Likelihood Ratio Test for a Single Parameter}\label{single-param}
+\textbf{The Neyman-Pearson Lemma}
+\subsubsection{The Likelihood Ratio Test for Multiple Parameters}\label{multiple-param}
+
+\section{Linear Regression}\label{linear-regression}
+\subsection{Parameters of a Linear Model}\label{linear-model}
+\subsection{The Least Squares Estimator}\label{least-squares}
+\subsection{The correlation coefficient}\label{correlation}
+\subsection{Hypothesis Testing for Linear Regression}\label{linear-hypothesis}
+\subsubsection{The T-test}\label{t-test}
+\subsubsection{The F-test}\label{f-test}
+
+\end{document}
