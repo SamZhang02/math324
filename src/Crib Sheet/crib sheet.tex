@@ -260,6 +260,30 @@ Testing for small samples is a similiar process
     t = \frac{\hat \beta_i - \beta_{i0}}{S\sqrt{c_{ii}}}
 \end{equation}
 Where we approximate $\sigma$ with $S = \sqrt{\frac{SSE}{(n-2)}}$, returning a T-distribution with (n-2) df.
+\subsection{Inferencces about The Model}\label{linear-model-hypothesis}
+Define \\ $\theta = a_0\beta_0 + a_1\beta_1$ \\ $\hat \theta = a_0\beta_0 +
+    a_1\beta_1$ And we want to test for
+\begin{equation}
+    H_0: \theta = \theta_0 \text{ vs } H_a: \theta \neq \theta_0
+    \nonumber
+\end{equation}
+\subsubsection{Testing for Large Samples}
+\begin{equation}
+    Z = \frac{\hat \theta - \theta_0}
+    {\sigma \sqrt{\frac{a_0^2{\frac{\sum x_i^2}{n}} + a_1^2 - 2a_0a_1 \bar x}{S_{xx}}}}
+\end{equation}
+\subsubsection{Testing for Small Samples}
+\begin{equation}
+    T = \frac{\hat \theta - \theta_0}
+    {\sigma \sqrt{\frac{a_0^2{\frac{\sum x_i^2}{n}} + a_1^2 - 2a_0a_1 \bar x}{S_{xx}}}}
+\end{equation}
+where $df = n-2$
+\subsection{Predicting Values}
+We can establish a confidence interval to predict the value of $Y$ for a given
+$x = x*$.
+\begin{equation}
+    CI = \hat \beta_0 + \hat \beta_1 x^* \pm t_{\alpha/2, n-2} S \sqrt{1 + \frac{1}{n} + \frac{{(x^* - \bar x)}^2}{S_{xx}}}
+\end{equation}
 
 \newpage
 \section*{Formulas, Tables, and Other Tools}\label{formulas-and-tables}
