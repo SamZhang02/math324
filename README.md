@@ -1,5 +1,6 @@
 # MATH324
+
 Math 324 materials:
-- Scripts
-- Cribsheets
-- ...
+
+-   Scripts ./r_tools
+-   Cribsheet ./Crib\ Sheet/crib\ sheet.pdf
