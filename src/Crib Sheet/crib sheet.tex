@@ -213,11 +213,53 @@ And the rejection region is determined by $\lambda \le k$
 
 \section{Linear Regression}\label{linear-regression}
 \subsection{Parameters of a Linear Model}\label{linear-model}
+A single parameter linear model can be defined as follow:
+\begin{equation}
+    Y = \beta_0 + \beta_1 x_1 + \cdots + \beta_n x_n + \epsilon
+\end{equation}
+Define:\\
+$\beta_0$ = the intercept\\
+$\beta_1 \ldots \beta_n$ = the slope (s)\\
+$\epsilon$ = the residual error\\
+\Remark{The residual error is the difference between the observed value and the predicted value.}\\\\
+Define the sum of squares error as \\
+\begin{equation}
+    SSE = \sum_{i=1}^n (y - \hat{y}_i)^2.
+\end{equation}
+Where $\hat{y}_i$ is the predicted value of $y_i$.\\
+We estimate the parameters $\beta_0, \beta_1, \ldots, \beta_n$ by minimizing the sum of squares of the residuals.\\
 \subsection{The Least Squares Estimator}\label{least-squares}
+The least-squares estimator is defined as follow:
+\begin{align}
+    \hat \beta_1 & = \frac{S_{xy}}{S_{xx}}        \\
+    \hat \beta_0 & = \bar y - \hat \beta_1 \bar x
+\end{align}
+Where $S_xy = \sum\limits_{i=1}^{n}(x_i - \bar x)(y_i - \bar y)$ and $S_{xx} = \sum\limits_{i=1}^{n}{(x_i - \bar x)}^2$.
+
 \subsection{The correlation coefficient}\label{correlation}
-\subsection{Hypothesis Testing for Linear Regression}\label{linear-hypothesis}
-\subsubsection{The T-test}\label{regression-t-test}
-\subsubsection{The F-test}\label{regression-f-test}
+The correlation coefficient $r$ is defined as follow:
+\begin{equation}
+    r = \frac{S_{xy}}{\sqrt{S_{xx}S_{yy}}} = \hat \beta_1 \sqrt{\frac{S_{xx}}{S_{yy}}}
+\end{equation}
+
+\subsection{Inferences for Single Features}\label{linear-hypothesis}
+\subsubsection{Testing for Large Samples}
+Given the null hypothesis $H_0: \beta_1 = 0$ and the alternative hypothesis
+$H_a: \beta_1 \neq 0$, we can test the effectiveness of an individual slope or
+intercept with:\\
+\begin{equation}
+    Z = \frac{\hat \beta_i - \beta_{i0}}{\sigma \sqrt{c_{ii}}}
+\end{equation}
+Where
+\begin{equation}
+    c_{00} = \frac{\sum x_i^2}{nS_{xx}} \text{ and } c_{ii} = \frac{1}{nS_{xx}}
+\end{equation}
+\subsubsection{Testing for Small Samples}
+Testing for small samples is a similiar process
+\begin{equation}
+    t = \frac{\hat \beta_i - \beta_{i0}}{S\sqrt{c_{ii}}}
+\end{equation}
+Where we approximate $\sigma$ with $S = \sqrt{\frac{SSE}{(n-2)}}$, returning a T-distribution with (n-2) df.
 
 \newpage
 \section*{Formulas, Tables, and Other Tools}\label{formulas-and-tables}
