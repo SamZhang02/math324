@@ -19,6 +19,7 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Bias}{\mathbb{B}}
 \newcommand{\eff}{\text{eff}}
+\newcommand{\Theorem}{\textbf{Thereom }}
 \newcommand{\Remark}{\textbf{Remark }}
 \newcommand{\Example}{\textbf{Example }}
 \newcommand{\Proof}{\textbf{Proof:}}
@@ -54,6 +55,13 @@
 \newpage
 
 \section{Properties of Estimators and Statistics}
+\subsection{Likelihood}
+The likelihood function is defined as
+\begin{align}
+    L(\theta) & = f(y_1, \ldots, y_n | \theta)  \nonumber \\
+              & = \prod_{i=1}^n f(y_i | \theta)
+\end{align}
+Given that $y_i$ are independent and identically distributed (i.i.d.).
 \subsection{Biasedness}\label{biasedness}
 An estimator $\hat{\theta}$ is biased if $\E(\hat{\theta}) \neq \theta$.\\
 \Example $\hat{\theta} = \frac{1}{n} \sum_{i=1}^n X_i$ is biased if $X_i$ are
@@ -180,9 +188,28 @@ test statistic is defined as follows:
 And we can make a conclusion using the F-table like the t-table.
 
 \subsection{The Likelihood Ratio Test}\label{likelihood-ratio}
-\subsubsection{The Likelihood Ratio Test for a Single Parameter}\label{single-param}
+\subsubsection{The Likelihood Ratio Test for simple hypothesis}\label{likelihood-ratio-simple}
 \textbf{The Neyman-Pearson Lemma}
-\subsubsection{The Likelihood Ratio Test for Multiple Parameters}\label{multiple-param}
+The Neyman-Pearson lemma is a special case of the Likelihood Ratio Test. It is applicable when we wish to test the simple null hypothesis $H_0: \theta = \theta_0$ against the alternative hypothesis $H_1: \theta \neq \theta_0$.\\
+The test statistic $k$ is the rejection region, it is defined as follow:
+\begin{equation}
+    \frac{L(\theta_0)}{L(\hat \theta)} < k
+\end{equation}
+We can compute $k$ given an $\alpha$.
+\subsubsection{The Likelihood Ratio Test for composite hypothesis}\label{likelihood-ratio-composite}
+Define: \\ $\Theta$ = the vector of all $k$ parameters ($\theta_1, \theta_2,
+    \dots, \theta_k$)\\ $\Omega_0$ = The set of possible values that $\Theta$ may
+lie in given $H_0$ \\ $\Omega_a$ = The set of possible values that $\Theta$ may
+lie in given $H_a$ \\ $\Omega = \Omega_0 \cup \Omega_a$ \\The The test
+statistic $\lambda$ is as follows:
+\begin{equation}
+    \lambda = \frac{L(\hat \Omega_0)}{\hat \Omega} = \frac{\max_{\Theta \in \Omega_0}L(\Theta)}{\max_{\Theta \in \Omega} L(\Theta)}
+\end{equation}
+And the rejection region is determined by $\lambda \le k$
+\Theorem Let $Y_1, \dots, Y_n$ have joint likelihood function $L(\Theta)$. Let $r_0$ denote the number of free parameters given $H_0$ and $r$ denote the number of free parameters given $\Theta \in \Omega$. Then for large $n$:
+\begin{equation}
+    -2 \ln \lambda \sim \chi^2(r_0-r)
+\end{equation}
 
 \section{Linear Regression}\label{linear-regression}
 \subsection{Parameters of a Linear Model}\label{linear-model}
@@ -198,9 +225,9 @@ And we can make a conclusion using the F-table like the t-table.
 Suppose that $\hat X_n \to X$ in probability and $\hat Y_n \to Y$ in
 probability. Then:
 \begin{itemize}
-    \item $\hat X_n + \hat Y_n \to X + Y$ in probability\\
-    \item $\hat X_n \cdot \hat Y_n \to X \cdot Y$ in probability\\
-    \item $Y \ne 0 \implies $ $\frac{\hat X_n}{\hat Y_n} \to \frac{X}{Y}$ in probability\\
+    \item $\hat X_n + \hat Y_n \to X + Y$ in probability
+    \item $\hat X_n \cdot \hat Y_n \to X \cdot Y$ in probability
+    \item $Y \ne 0 \implies $ $\frac{\hat X_n}{\hat Y_n} \to \frac{X}{Y}$ in probability
     \item $g(\cdot)$ is a continuous function at $X$ $\implies$ $g(\hat X_n) \to g(X)$ in
           probability
 \end{itemize}
@@ -232,7 +259,7 @@ $S\approx \sigma$, but given a small sample size ($n \le 30$), add the extra par
     W = \frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{(n-1)}
 \end{equation}
 
-\subsection*{F-distribution}
+\subsection*{F-distribution in regards to chi-squares}
 \begin{equation}
     F = \frac{W_1/df_1}{W_2/df_2} \sim F(df_1, df_2)
 \end{equation}
