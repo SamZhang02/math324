@@ -1,12 +1,33 @@
-# script that performs linear regression given a data frame
-# and a list of variables to use as predictors
-
 data <- read.csv("data.csv", header = TRUE, sep = ",")
 
-predictors <- c("x1", "x2")
-response <- "y"
-formula <- formula(paste(response, "~", paste(predictors, collapse = " + ")))
+x <- c("x")
+y <- "y"
+formula <- formula(paste(y, "~", paste(x, collapse = " + ")))
 
-model <- lm(formula, data = subset(data[, c(predictors, response)]))
+model <- lm(formula, data = data)
 
-summary(model)
+sum <- summary(model)
+
+n <- nrow(data)
+x_mean <- mean(data[, x])
+y_mean <- mean(data[, y])
+
+sxx <- sum((data[, x] - x_mean)^2)
+syy <- sum((data[, y] - y_mean)^2)
+sxy <- sum((data[, x] - x_mean) * (data[, y] - y_mean))
+
+sse <- syy - sxy^2 / sxx
+mse <- sse / (n-2)
+
+#summary
+sum
+paste("Mean x", x_mean)
+paste("Mean y", y_mean)
+paste("Sxx ", sxx)
+paste("Sxy ", sxy)
+paste("Syy ", syy)
+paste("Sum Square Error: ", sse)
+paste("Mean Square Error: ", mse)
+
+# enable for predictions
+predict(model, newdata = data.frame(x = c(2)), interval = "prediction")
