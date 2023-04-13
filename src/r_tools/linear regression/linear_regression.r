@@ -30,4 +30,4 @@ paste("Sum Square Error: ", sse)
 paste("Mean Square Error: ", mse)
 
 # enable for predictions
-predict(model, newdata = data.frame(x = c(2)), interval = "prediction")
+predict(model, newdata = data.frame(x = c(2)), interval = "prediction", level = .99)
